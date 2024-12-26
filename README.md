@@ -19,3 +19,10 @@ What I learned day to day
 ## 태양광 발전소 구성도_통신라인 [Link📡](https://github.com/dlwnsgur9242/TIL/blob/main/electrical%20energy/%ED%83%9C%EC%96%91%EA%B4%91%20%EB%B0%9C%EC%A0%84%EC%86%8C%20%EA%B5%AC%EC%84%B1%EB%8F%84_%ED%86%B5%EC%8B%A0%EB%9D%BC%EC%9D%B8.md)
 +   데이터 수집장치 RTU
 <br>
+
+
+## CURL [Link🎈]()
++   CURL이란?
++   CURL 사용법
++   CURL 실습
+<br>
