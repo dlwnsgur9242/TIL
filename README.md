@@ -2,7 +2,7 @@
 What I learned day to day
 
 
-## 전력⚡[Link⚡](https://github.com/dlwnsgur9242/TIL/blob/main/electrical%20energy/%EC%A0%84%EB%A0%A5.md)
+## 전력 [Link⚡](https://github.com/dlwnsgur9242/TIL/blob/main/electrical%20energy/%EC%A0%84%EB%A0%A5.md)
 +   전력, 전압, 전류 개념
 +   직류(DC) 전력
 +   교류(AC) 전력
