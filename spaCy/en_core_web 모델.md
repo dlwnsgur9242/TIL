@@ -38,3 +38,10 @@ python -m spacy download en_core_web_trf
 
 ### en_core_web 모델 별 비교
 <img src="img\en_core_web 모델.PNG">
+
+<br>
+추천
+빠른 작업: en_core_web_sm
+중간 수준: en_core_web_md
+최고 성능: en_core_web_trf
+트랜스포머 모델(en_core_web_trf)은 속도가 느리지만, 매우 정확하므로 최신 모델 성능이 필요한 작업에 적합합니다. 작업의 특성에 따라 적절한 모델을 선택하세요! 😊
