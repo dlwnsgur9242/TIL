@@ -5,9 +5,9 @@
 +   M2M(Machine-to-Machine)를 기반으로 주로 IoT(사물 인터넷)의 개방형 프로토콜로 사용된다.
 +   애플리케이션 Layer 프로토콜로 일반적인 HTTP와 같은 프로토콜과 달리 클라이언트-서버 모델이 아니라 Broker, Publisher, Subscriber 모델로 이루어진다.
 
-2. MQTT 아키텍처
 ![alt text](imgs/mqtt.png)
 
+2. MQTT 아키텍처
 +   발행자(Publisher)
     -   메시지를 생성하는 주체이다.
     -   발행자는 자신이 발행한 메시지를 특정 "주제(Topic)"에 발행한다.
