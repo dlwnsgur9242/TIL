@@ -37,7 +37,8 @@ python -m spacy download en_core_web_trf
 
 
 ### en_core_web 모델 별 비교
-<img src="imgs\en_core_web 모델.PNG">
+![alt text](../imgs/en_core_web%20모델.PNG)
+
 
 <br>
 추천
