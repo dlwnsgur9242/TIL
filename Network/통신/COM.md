@@ -20,3 +20,80 @@
     -   복잡한 개발 및 디버깅
     -   레지스트리 의존성으로 인한 배포 어려움
     -   참조 카운팅 오류로 인한 메모리 누수 가능성
+
+## 알게된 점
+
++   통신 환경에 따라 데이터 송수신 품질이 저하될 가능성이 높다.
++   통신 매체에 따라 데이터 송수신 품질이 달라질 수 있다.
++   통신 환경과 통신 매개체에 적합한 방식을 찾아야 한다.
+
+### 문제상황
++   com 통신시 송신한 데이터가 손실되거나 정상적으로 출력되지 않는 현상.
+    ## 해결방안
+        1.1 부분 데이터 수신 처리
+        -   수신된 데이터를 바이트 버퍼(buffer)에 누적하여 데이터가 완전할 때까지 대기.
+        -   줄바꿈 문자(\n)를 기준으로 데이터를 처리하고, 미완성 데이터는 버퍼에 보존.
+        1.2 데이터 타입 일관성 유지
+        -   수신된 데이터는 항상 바이트 타입(bytes)로 처리.
+        -   데이터 디코딩은 UTF-8로 명시적으로 수행.
+        1.3 미완성 데이터 보존
+        -   줄바꿈 문자가 없는 미완성 데이터는 buffer에 유지하여 다음 수신 데이터와 결합 후 처리.
+        1.4 송신 데이터 인코딩 확인
+        -   송신 측에서 데이터를 반드시 UTF-8로 인코딩 후 전송하도록 수정.
+    
+    ## com 송신 코드 (python)
+        import serial
+        import time
+
+        def send_data():
+            # COM 포트 번호 및 설정 (예: COM1, COM2)
+            port = "COM10"
+            baudrate = 9600
+            
+            # 직렬 포트 열기
+            ser = serial.Serial(port, baudrate)
+            
+            choice = input("데이터 보내는 방식 선택(1: 자동, 0: 수동): ")
+            
+            # 데이터 송신
+            if choice == '0':
+                while True:
+                    data = input("")  # 전송할 데이터
+                    data_write = f"{data}\n" 
+                    ser.write(data_write.encode('utf-8'))  # 데이터 전송
+                    print(f"Sent: {data_write}")
+
+            elif choice == '1':
+                while True:
+                    data = "안녕하세요 \n"  # 전송할 데이터 \n은 데이터의 끝을 의미
+                    ser.write(data.encode('utf-8'))  # 데이터 전송
+                    print(f"Sent: {data}")
+                    time.sleep(1)  # n초 대기 후 반복 송신
+
+        if __name__ == "__main__":
+            send_data()
+
+    ## com 수신 코드 (python)
+        import serial
+
+        def receive_data():
+            # COM 포트 번호 및 설정
+            port = "COM11"
+            baudrate = 9600
+
+            # 직렬 포트 열기
+            ser = serial.Serial(port, baudrate, timeout=1)
+            
+            buffer = b""  # 수신된 데이터 저장용 버퍼
+
+            while True:
+                if ser.in_waiting > 0:  # 데이터가 도착한 경우
+                    data = ser.read(ser.in_waiting)
+                    buffer += data # 누적
+                    
+                    if b"\n" in buffer:  # '\n'이 있는 경우      바이트 리터럴로 검사
+                        line, buffer = buffer.split(b"\n", 1)
+                        print(f"Received: {line.decode('utf-8', errors='replace').strip()}")  # 수신한 데이터 출력
+
+        if __name__ == "__main__":
+            receive_data()
