@@ -97,3 +97,15 @@
 
         if __name__ == "__main__":
             receive_data()
+
+
+    ## 주요 오류 메시지
+        raise SerialException("could not open port {!r}: {!r}".format(self.portstr, ctypes.WinError()))     
+        serial.serialutil.SerialException: could not open port 'COM5': PermissionError(13, '액세스가 거부되었습니다.', None, 5)
+
+    +   com5 포트를 이미 사용하고 있다는 메시지입니다. com5 사용을 중단하고 다시 실행하면 해결 됩니다.
+
+
+    ## 실습
+        VSPD를 사용하면 가상의 Com포트를 생성해서 데이터 송수신을 할 수 있습니다.
+        
