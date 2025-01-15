@@ -2,7 +2,30 @@
 What I learned day to day
 
 
-## 전력 [Link⚡](https://github.com/dlwnsgur9242/TIL/blob/main/electrical%20energy)
+## AI
++   시계열 데이터와 컴퓨터 비전의 차이점
++   spaCy
+
+## CS
++   Python
++   CURL
++   Ngrok
++   PyInstaller
++   환경변수
++   GitHub Codespaces
+
+
+## Network
++   통신
++   프로토콜
+<br>
+
+## DB
++   MSSQL
++   Key
+<br>
+
+## 전력 KW [Link⚡](https://github.com/dlwnsgur9242/TIL/blob/main/electrical%20energy)
 +   전력, 전압, 전류 개념
 +   직류(DC) 전력
 +   교류(AC) 전력
@@ -16,9 +39,4 @@ What I learned day to day
 <br>
 
 
-## CURL [Link🎈]()
-+   CURL이란?
-+   CURL 사용법
-+   CURL 실습
 <br>
-
