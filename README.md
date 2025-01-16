@@ -2,11 +2,11 @@
 What I learned day to day
 
 
-## AI
+## AI 🦾
 +   시계열 데이터와 컴퓨터 비전의 차이점
 +   spaCy
 
-## CS
+## CS 💻
 +   Python
 +   CURL
 +   Ngrok
@@ -15,12 +15,12 @@ What I learned day to day
 +   GitHub Codespaces
 
 
-## Network
+## Network 📡
 +   통신
 +   프로토콜
 <br>
 
-## DB
+## DB 💾
 +   MSSQL
 +   Key
 <br>
